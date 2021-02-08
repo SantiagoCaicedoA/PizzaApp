@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Lab 4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body onload="showDate()">
+    <div class="nav-bar">
+
+
+        <p>
+            Welcome to <span>Santiago's Pizza Store</span>
+        </p>
+
+        <div class="options">
+            <ul>
+                <li>ORDER ONLINE</li>
+                <li>MENU</li>
+                <li>COUPONS</li>
+                <li>LOCATIONS</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="containerLeft">
+        <!--Customer Information -->
+
+        <div id="timeTitle">
+            <h3 id="time"></h3>
+        </div>
+        <form id="registrationform" action="http://localhost/registration.htm" method="GET">
+            <label for="name-field" id="name" class="required"></label>
+            <input  type="text" id="name-field" class="field" placeholder="First Name" name="FirstName" maxlength="25"
+                pattern="[a-zA-Z]{1}[a-zA-Z -]{0,24}" required onkeyup="getCustomerName()">
+
+            <label for="name-field" id="Lastname" class="required"></label>
+            <input  type="text" id="name-field-Lastname" class="field" placeholder="Last Name" name="LastName" maxlength="25"
+                pattern="[a-zA-Z]{1}[a-zA-Z -]{0,24}" required onkeyup="getCustomerName()">
+            
+
+            <label for="telephone-field" class="required tel"></label>
+            <input type="tel" id="number-field" class="field" name="Telephone" placeholder="Telephone Number"
+                pattern="[0-9]{0,1}[ -]{0,1}[\(]{0,1}[0-9]{3}[\)]{0,1}[ \-]{0,1}[0-9]{3}[ \-]{0,1}[0-9]{4}" onkeyup="getCustomerNumber()">
+            <br>
+
+            <label for="party">Enter a date and time for your party booking:</label>
+            <input type="datetime-local" id="OrderDateAndTime" value="2000-05-05" min="2021-02-8" onchange="getCustomerDate()"> 
+          
+
+            <!--Pizza Information -->
+            
+            <h3 class="foodTitle">PIZZA </h3>
+
+            <div class="navOrder">
+                <div class="header">
+                    <div class="item">ITEM</div>
+                    <div class="qtyHeader">QTY</div>
+                    <div class="priceHeader">PRICE</div>
+
+                </div>
+            </div>
+            <div class="pizzaOptions">
+                <div class="foodItem">
+                    <div class="foodName">
+                        <input type="checkbox" id="Margherita" name="MargheritaPrice" value="12">
+                        <label id="pizza1" for="pizza1"> Margherita: </label>
+                        <img class="picture" src="img/marguerita.jpg" alt="marguerita">
+                    </div>
+                    <div class="itemInfo">
+                        <input class="qty" type="number" id="MargheritaQty" name="MargueritaQty" min="0" max="5" placeholder="Qty" onchange="getBill()" value="0">
+                        <label class="price">$12.00</label>
+                    </div>
+                </div>
+                <br>
+
+                <div class="foodItem">
+                    <div class="foodName">
+                        <input type="checkbox" id="Quattro" name="QuattroPrice" value="12.50">
+                        <label id="pizza2" for="pizza2"> Quattro Formaggi: </label>
+                        <img class="picture" src="img/quattro.jpg" alt="quattro">
+                    </div>
+                    <div class="itemInfo">
+                        <input class="qty" type="number" id="QuattroQty" name="QuattroFormaggiQty" min="0" max="5" placeholder="Qty" onchange="getBill()" value="0">
+                        <label class="price">$12.50</label>
+                    </div>
+                </div>
+
+
+                <br>
+
+                <div class="foodItem">
+                    <div class="foodName">
+                        <input type="checkbox" id="Capricciossa" name="CapricciossaPrice" value="13.00">
+                        <label id="pizza3" for="pizza3"> Capricciossa: </label>
+                        <img class="picture" src="img/capriocciosa.jpg" alt="Capricciossa">
+                    </div>
+                    <div class="itemInfo">
+                        <input class="qty" type="number" id="CapricciossaQty" name="CapricciossaQty" min="0" max="5" placeholder="Qty" onchange="getBill()" value="0">
+                        <label class="price">$13.00</label>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <!--Sandwich Information -->
+            <h3 class="foodTitle">SANDWICHES</h3>
+            <div class="navOrder">
+                <div class="header">
+                    <div class="item">ITEM</div>
+                    <div class="qtyHeader">QTY</div>
+                    <div class="priceHeader">PRICE</div>
+
+                </div>
+            </div>
+
+            <div class="sandwichOptions">
+                <div class="foodItem">
+                    <div class="foodName">
+                        <input type="checkbox" id="Schnitzel" name="SchnitzelPrice" value="8.50">
+                        <label id="sandwich1" for="sandwich1"> Schnitzel: </label>
+                        <img class="picture" src="img/schnitzel.jpg" alt="schnitzel">
+                    </div>
+                    <div class="itemInfo">
+                        <input class="qty" type="number" id="SchnitzelQty" name="SchnitzelQty" min="0" max="5"
+                            placeholder="Qty" onchange="getBill()" value="0">
+                        <label class="price">$8.50</label>
+                    </div>
+                </div>
+                <br>
+
+                <div class="foodItem">
+                    <div class="foodName">
+                        <input type="checkbox" id="MixedGrill" name="MixedGrillPrice" value="9.50">
+                        <label id="sandwich2" for="sandwich2"> Mixed Grill: </label>
+                        <img class="picture" src="img/grill.jpg" alt="MixedGrill">
+                    </div>
+                    <div class="itemInfo">
+                        <input class="qty" type="number" id="MixedGrillQty" name=" MixedGrillQty" min="0" max="5"
+                            placeholder="Qty" onchange="getBill()" value="0">
+                        <label class="price">$9.50</label>
+                    </div>
+                </div>
+                <br>
+
+                <div class="foodItem">
+                    <div class="foodName">
+                        <input type="checkbox" id="BeefBun" name="BeefBunPrice" value="10">
+                        <label id="sandwich3" for="sandwich3"> Beef on a Bun: </label>
+                        <img class="picture" src="img/beef.jpg" alt="BeefBun">
+                    </div>
+                    <div class="itemInfo">
+                        <input class="qty" type="number" id="BeefBunQty" name=" BeefBunQty" min="0" max="5"
+                            placeholder="Qty" onchange="getBill()" value="0">
+                        <label class="price">$10.0</label>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <!--Drinks Information -->
+            <h3 class="foodTitle">BEVARAGES </h3>
+
+            <div class="navOrder">
+                <div class="header">
+                    <div class="item">ITEM</div>
+                    <div class="qtyHeader">QTY</div>
+                    <div class="priceHeader">PRICE</div>
+
+                </div>
+            </div>
+            <div class="sandwichOptions">
+                <div class="foodItem">
+                    <div class="foodName">
+                        <input type="checkbox" id="Coffee" name="CoffeePrice" value="2">
+                        <label for="drink1"> Coffee: </label>
+                    </div>
+                    <div class="itemInfo">
+                        <input class="qty" type="number" id="CoffeeQty" name="CoffeeQty" min="0" max="5"
+                            placeholder="Qty" onchange="getBill()" value="0">
+                        <label class="price">$2.00</label>
+                    </div>
+                </div>
+                <br>
+
+                <div class="foodItem">
+                    <div class="foodName">
+                        <input type="checkbox" id="Latte" name="LattePrice" value="2.50">
+                        <label for="drink2"> Latte: </label>
+                    </div>
+                    <div class="itemInfo">
+                        <input class="qty" type="number" id="LatteQty" name="LatteQty" min="0" max="5"
+                            placeholder="Qty" onchange="getBill()" value="0">
+                        <label class="price">$2.50</label>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="foodItem softdrink">
+                    <div class="foodName">
+                        <input type="checkbox" id="SoftDrink" name="SoftDrinkPrice" value="1.75">
+                        <label for="drink3"> Soft Drink: </label>
+                    </div>
+                    <div class="itemInfo">
+                        <input class="qty" type="number" id="SoftDrinkQty" name="SoftDrinkQty" min="0" max="5"
+                            placeholder="Qty" onchange="getBill()" value="0"    >
+                        <label class="price">$1.75</label>
+                    </div>
+                    <br>
+                </div>
+                
+            </div>
+            <br>
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+        </form>
+    </div>
+
+    <div class="containerRight">
+        <h2 >Customer Name</h2>
+        <p id="customerName">Full Name</p>
+
+        <h2 >Customer Phone Number</h2>
+        <p id="customerNumber">(403) 123-4567</p>
+
+        <h2 >Pick up Date</h2>
+        <p id="customerDate"></p>
+
+        
+        <div class="totalTitles">
+            <h3 class="foodTitle">PIZZA </h3>
+            <h3 class="foodTitle" id="sanTitile">SANDWICHES</h3>
+            <h3 class="foodTitle">BEVARAGES</h3>
+        </div>
+        <div class="totals">
+            <div id="pizza">
+                <div id="totalPizza">
+                     Pizza: <br>
+                    Qty: 0 <br>
+                    Total: $0.00 <br>  </div>
+            </div>
+            <div id="sandwich">
+                <div id="totalSandwich">
+                    Sandwich:  <br>
+                    Qty: 0  <br>
+                    Total: $0.00 <br>
+                </div>
+            </div>
+            <div id="drinks">
+                <div id="totalDrinks">
+                    Bevarage:  <br>
+                    Qty: 0 <br>
+                    Total: $0.00 <br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="TotalBill">
+            <h1 id="totalBillTitle">Total =</h1>
+            <h2 id="totalBillNumber" onchange="getBill()">$0.00</h2>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
+
+

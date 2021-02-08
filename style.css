@@ -1,0 +1,201 @@
+@media all{
+/*Nav Bar*/
+body{
+    background: rgb(243, 241, 241);
+    font-family: 'Roboto Condensed', sans-serif; 
+}
+.nav-bar{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 50px;
+    background: #006491;
+    display: flex;
+    padding-left: 10%;
+    box-shadow: 3px 6px 4px 0px rgba(0,0,0,.2);
+}
+
+span{
+    font-size: 120%;
+    font-weight: bold;
+    color: #e31837;
+}
+
+
+.nav-bar li{
+    margin-right: 20px;
+}
+.nav-bar p{
+    margin-right: 300px;
+}
+.options ul{
+    float: right;
+    color:white;
+    display: flex;
+    list-style-type: none;  
+    margin-left: 150px;
+
+/*Container Left*/
+}
+.containerLeft {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid grey;
+    color: black;
+    float:left;
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
+.navOrder{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background:#006491;
+    color:white;
+    padding: 5px;
+}
+#time{
+    color: #006491;
+}
+#name-field{
+    margin-right: 80px;
+    margin-bottom: 20px;
+}
+#number-field{
+    margin-bottom: 10px;
+}
+.header{
+    display:flex;
+}
+.item{
+    margin-left: 10px;
+    margin-right: 290px;
+}
+.qtyHeader{
+    margin-right: 40px;
+}
+.priceHeader{
+    margin-right: 5px;
+}
+.price{
+    margin-right: 5px;
+}
+.qty{
+    width: 55px;
+    margin-right: 15px; 
+}
+.foodItem{
+    display:flex;
+}
+.foodName{
+    float:left;
+    margin-right:auto;
+}
+.itemInfo{
+    float: right;  
+    display: flex;
+}
+.softdrink{
+    margin-top: 20px;
+}
+.foodTitle{
+    font-weight: bold;
+    color:#e31837;
+}
+
+/*Hovers*/
+.picture{
+    height: 125px;
+    display: none;
+}
+
+#pizza1:hover + img{
+    display: block;   
+    border: 1px solid grey;
+    padding: 2px;
+}
+#pizza2:hover + img{
+    display: block;   
+    border: 1px solid grey;
+    padding: 2px;
+}
+#pizza3:hover + img{
+    display: block;   
+    border: 1px solid grey;
+    padding: 2px;
+}
+#sandwich1:hover + img{
+    display: block;   
+    border: 1px solid grey;
+    padding: 2px;
+}
+#sandwich2:hover + img{
+    display: block;   
+    border: 1px solid grey;
+    padding: 2px;
+}
+#sandwich3:hover + img{
+    display: block;   
+    border: 1px solid grey;
+    padding: 2px;
+}
+
+/*Container Right*/
+.containerRight {
+    height: 700px;
+    width: 565px;
+    float: right;
+    margin-right: 300px;
+    border: 1px solid grey;
+    padding: 20px;
+
+}
+
+.itemInfoRight{
+    margin-right: 50px;
+}
+
+.totals{
+    display: flex;
+}
+
+.totalTitles{
+    display: flex;
+    
+}
+.foodTitle{
+    margin-left: 20px;
+    margin-right: 100px ;
+}
+#sanTitile{
+    margin-right: 70px
+}
+
+#totalPizza{
+    margin-right: 70px;
+}
+#totalSandwich{
+    margin-left: 90px;
+    margin-right: 120px;
+}
+.TotalBill{
+    display: flex;
+}
+#totalBillTitle{
+    color: #e31837;
+}
+#totalBillNumber{
+    margin-left: 100px;
+    margin-top: 6%;
+    
+}
+
+
+}
+
+@media print{
+    body{
+        background-color: transparent;
+    }
+    .nav-bar{
+        display: none;
+    }
+}

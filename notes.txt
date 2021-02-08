@@ -1,0 +1,18 @@
+001 Learned how to remove li dots:
+    https://stackoverflow.com/questions/36350948/removing-black-dots-from-li-and-ul
+
+002 Learned how to display updated time:
+    https://stackoverflow.com/questions/44686386/how-do-you-get-seconds-to-start-on-page-load-using-javascript
+
+003 Learned css grid-row property:
+    https://www.w3schools.com/cssref/pr_grid-row.asp
+
+004 Couldn't organize the order form with grid-row, so I decided to wrap every item up and put in nice with margins and floats
+
+005 Learned that setInterval() works to load the function every x secods 
+
+006 Spent a loooot of time trying to display the Right side as the left side(nam, qty , price )
+    in a column. The literal wouldn't allow me to do it like that. 
+
+007 Learned how to display out put at the same time as the input is being written
+
